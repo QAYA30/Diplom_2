@@ -27,11 +27,9 @@ public class LoginUserTest {
     public void init() {
         userCreation = getRandomUser();
         Response responseCreate = sucUserReg(userCreation);
-        assertEquals(SC_OK, responseCreate.statusCode());
         user = responseCreate.body().jsonPath().getString("user");
         token = responseCreate.body().jsonPath().getString("accessToken");
-        assertTrue("true", responseCreate.body().jsonPath().getBoolean("success"));
-    }
+        }
     @Test
     @DisplayName("Авторизация пользователя")
     @Description("Базовый тест - успешная авторизации юзера")

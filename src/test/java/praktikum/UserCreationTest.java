@@ -16,8 +16,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class UserCreationTest {
-    UserCreation userCreation;
-    String token;
+    private UserCreation userCreation;
+    private String token;
 
     @Before
     public void init() {

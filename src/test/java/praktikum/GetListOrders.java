@@ -45,7 +45,7 @@ public class GetListOrders {
     @Description("Проверка, что авторизованный пользователь получит список заказов")
     public void getListOrdersAuthUserTest() {
         Response resOrders = ordersListAuth(token);
-        assertEquals(SC_OK, resOrders.statusCode());
+        resOrders.then().assertThat().statusCode(200);
         MatcherAssert.assertThat(resOrders.body().jsonPath().getList("orders"), notNullValue());
     }
     @Test
